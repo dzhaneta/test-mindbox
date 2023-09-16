@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import TodoInput from '../TodoInput/TodoInput';
 import TodoList from '../TodoList/TodoList';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,9 +14,8 @@ function TodoApp() {
         const storedTodos = localStorage.getItem('todos');
         if (storedTodos) {
             return JSON.parse(storedTodos);
-        } else {
-            return [];
         }
+        return [];
     }
     );
     const [filter, setFilter] = useState<string | null>(() => {
