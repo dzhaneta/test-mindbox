@@ -32,7 +32,9 @@
         "spaced-comment": "error",
         "quotes": ["error", "single"],
         "no-duplicate-imports": "error",
-        "react/button-has-type": "off"
+        "react/button-has-type": "off",
+        "object-shorthand": 0,
+        "prettier/prettier": "error"
     },
     "settings": {
         "import/resolver": {
