@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/test-mindbox/static/css/main.8fe3074b.css",
-    "main.js": "/test-mindbox/static/js/main.fc11f51e.js",
+    "main.js": "/test-mindbox/static/js/main.2a51eabf.js",
     "static/js/787.2843ca88.chunk.js": "/test-mindbox/static/js/787.2843ca88.chunk.js",
     "static/media/HelveticaNeueCyr-Thin.woff": "/test-mindbox/static/media/HelveticaNeueCyr-Thin.7509330faf374d41f88d.woff",
     "static/media/HelveticaNeueCyr-Thin.woff2": "/test-mindbox/static/media/HelveticaNeueCyr-Thin.2f69ed0ac0885fc3f7e6.woff2",
@@ -10,11 +10,11 @@
     "static/media/icon-arrow-down-hover.svg": "/test-mindbox/static/media/icon-arrow-down-hover.9d738370a2b4f6a31884011e4533f41c.svg",
     "static/media/icon-arrow-down.svg": "/test-mindbox/static/media/icon-arrow-down.51cbcd1f1c14be6ed8cb80d8062aea94.svg",
     "main.8fe3074b.css.map": "/test-mindbox/static/css/main.8fe3074b.css.map",
-    "main.fc11f51e.js.map": "/test-mindbox/static/js/main.fc11f51e.js.map",
+    "main.2a51eabf.js.map": "/test-mindbox/static/js/main.2a51eabf.js.map",
     "787.2843ca88.chunk.js.map": "/test-mindbox/static/js/787.2843ca88.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8fe3074b.css",
-    "static/js/main.fc11f51e.js"
+    "static/js/main.2a51eabf.js"
   ]
 }
