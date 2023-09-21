@@ -149,7 +149,9 @@ function TodoApp() {
                 {itemCount} item{itemCount !== 1 ? 's' : ''} left
               </p>
               <TodosFilter filter={filter} onFilter={setFilter} />
-              <StyledButton onClick={clearCompleted}>Clear completed</StyledButton>
+              <StyledButton onClick={clearCompleted} data-testid="clear-completed">
+                Clear completed
+              </StyledButton>
             </ControlContainer>
           </StyledListItem>
         </ListGroup>

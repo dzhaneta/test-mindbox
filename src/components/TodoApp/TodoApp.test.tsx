@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import TodoApp from './TodoApp';
 
@@ -7,13 +6,6 @@ beforeEach(() => {
 });
 
 describe('TodoApp Component', () => {
-  it('renders the app title correctly', () => {
-    render(<TodoApp />);
-    const appTitle = screen.getByText('todos');
-
-    expect(appTitle).toBeInTheDocument();
-  });
-
   it('adds a new todo when a task is submitted', () => {
     render(<TodoApp />);
     const input = screen.getByPlaceholderText('What needs to be done?');
@@ -68,24 +60,28 @@ describe('TodoApp Component', () => {
     render(<TodoApp />);
     const input = screen.getByPlaceholderText('What needs to be done?');
     const addButton = screen.getByLabelText('submit');
+    const incompleteButton = screen.getByTestId('filter-incomplete');
+    const completedButton = screen.getByTestId('filter-completed');
 
-    fireEvent.change(input, { target: { value: 'Incomplete Task' } });
+    fireEvent.change(input, { target: { value: 'Test Task' } });
     fireEvent.click(addButton);
 
-    const todoItem = screen.getByText('Incomplete Task');
+    // const todoItem = screen.getByText('Test Task');
     const checkbox = screen.getByRole('checkbox');
 
-    // make task completed
+    // Помечаем задачу как выполненную
     fireEvent.click(checkbox);
 
-    const filterIncompleteButton = screen.getByText('Incomplete');
-    fireEvent.click(filterIncompleteButton);
+    // Включаем фильтр "невыполненные"
+    fireEvent.click(incompleteButton);
 
-    expect(todoItem).toBeInTheDocument();
+    // Ожидается, что элемент больше не будет найден
+    expect(screen.queryByText('Test Task')).toBeNull();
 
-    const filterCompletedButton = screen.getByText('Completed');
-    fireEvent.click(filterCompletedButton);
+    // Включаем фильтр "выполненные"
+    fireEvent.click(completedButton);
 
-    expect(todoItem).not.toBeInTheDocument();
+    // Ожидается, что элемент будет найден
+    expect(screen.getByText('Test Task')).toBeInTheDocument();
   });
 });

@@ -27,18 +27,24 @@ function TodosFilter({ filter, onFilter }: TodosFilterProps) {
 
   return (
     <StyledFiltersContainer>
-      <button className={`btn ${filter === null ? 'btn__active' : ''}`} onClick={() => handleFilter(null)}>
+      <button
+        className={`btn ${filter === null ? 'btn__active' : ''}`}
+        onClick={() => handleFilter(null)}
+        data-testid="filter-all"
+      >
         All
       </button>
       <button
         className={`btn ${filter === 'incomplete' ? 'btn__active' : ''}`}
         onClick={() => handleFilter('incomplete')}
+        data-testid="filter-incomplete"
       >
         Incomplete
       </button>
       <button
         className={`btn ${filter === 'completed' ? 'btn__active' : ''}`}
         onClick={() => handleFilter('completed')}
+        data-testid="filter-completed"
       >
         Completed
       </button>
