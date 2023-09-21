@@ -4,7 +4,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import baseTheme from '../../styles/theme';
 import TodoInput from '../TodoInput/TodoInput';
 import TodoItem from '../TodoItem/TodoItem';
-import TodoSort from '../TodoSort/TodoSort';
+import TodosFilter from '../TodosFilter/TodosFilter';
 
 const AppWrapper = styled.div`
   width: 100%;
@@ -52,6 +52,7 @@ const ControlContainer = styled.div`
 
   p {
     margin: 0;
+    width: 60px;
   }
 `;
 
@@ -98,7 +99,6 @@ function TodoApp() {
   }, [filter]);
 
   const filteredTodos = useMemo(() => {
-    console.log('filter started');
     switch (filter) {
       case 'incomplete':
         return todos.filter((todo) => !todo.completed);
@@ -148,7 +148,7 @@ function TodoApp() {
               <p>
                 {itemCount} item{itemCount !== 1 ? 's' : ''} left
               </p>
-              <TodoSort filter={filter} onFilter={setFilter} />
+              <TodosFilter filter={filter} onFilter={setFilter} />
               <StyledButton onClick={clearCompleted}>Clear completed</StyledButton>
             </ControlContainer>
           </StyledListItem>

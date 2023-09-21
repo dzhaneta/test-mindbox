@@ -4,6 +4,12 @@
         "es2021": true,
         "jest": true
     },
+    "plugins": [
+        "react",
+        "react-hooks", 
+        "@typescript-eslint", 
+        "prettier"
+    ],
     "extends": [
         "react-app",
         "react-app/jest",
@@ -20,11 +26,13 @@
         "sourceType": "module",
         "project": "./tsconfig.json"
     },
-    "plugins": [
-        "react",
-        "react-hooks", 
-        "@typescript-eslint", 
-        "prettier"
+    "overrides": [
+        {
+            "files": [
+                "*.ts",
+                "*.tsx"
+            ]
+        }
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",

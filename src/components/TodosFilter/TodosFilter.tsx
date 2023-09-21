@@ -17,12 +17,12 @@ const StyledFiltersContainer = styled.div`
   }
 `;
 
-interface TodoSortProps {
+interface TodosFilterProps {
   filter: string | null;
   onFilter: (filter: string | null) => void;
 }
 
-function TodoSort({ filter, onFilter }: TodoSortProps) {
+function TodosFilter({ filter, onFilter }: TodosFilterProps) {
   const handleFilter = (selectedFilter: string | null) => onFilter(selectedFilter);
 
   return (
@@ -46,4 +46,4 @@ function TodoSort({ filter, onFilter }: TodoSortProps) {
   );
 }
 
-export default TodoSort;
+export default TodosFilter;

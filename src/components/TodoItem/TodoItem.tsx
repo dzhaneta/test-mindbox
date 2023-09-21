@@ -53,7 +53,6 @@ function TodoItem({ todo, toggleTodoStatus }: TodoItemProps) {
       checked={todo.completed}
       onChange={() => toggleTodoStatus(todo.id)}
       label={todo.task}
-      id={todo.task}
     />
   );
 }
